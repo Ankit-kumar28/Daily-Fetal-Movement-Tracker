@@ -1,97 +1,96 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+📱 Daily Fetal Movement Tracker (DFM – Kick Counter)
 
-# Getting Started
+A React Native **Android** mobile application to help pregnant women track daily fetal movements (kick count), record sessions, and view past records.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 🚀 Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- Home screen with informational article banner  
+- Record fetal movement session using a **timer-based counter**
+- Save session duration after completion  
+- View **past records** with date and duration  
+- Clean and consistent UI based on assignment screenshots  
+- Built using **React Native CLI** (Android only)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## 🛠 Tech Stack
 
-# OR using Yarn
-yarn start
+- **React Native (CLI)** – Core framework  
+- **TypeScript** – Type safety and better code quality  
+- **React Navigation** – Screen navigation  
+- **AsyncStorage** – Local data persistence  
+- **UUID** – Unique session ID generation  
+- **react-native-vector-icons** – Icons  
+
+---
+
+## ▶️ How to Run the Project (Android Only)
+
+### Prerequisites
+- Node.js 
+- npm or yarn
+- Android Studio (Android SDK + Emulator) or a physical Android device
+- Properly configured React Native CLI environment
+
+### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd <project-folder>
+2.Install dependencies
+   ```bash
+   npm install
 ```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+3 Start Metro bundler
+ ```bash
+npx react-native start
 ```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+4.Run the app on Android
+```bash
+npx react-native run-android
 ```
+📂 Project Structure
+```bash
+src/
+ ├── assets/
+ |    ├── LeapArticle.jpg
+ │    └── Leap.png
+ ├── components/
+ |    ├── Info.tsx
+ │    └── PastRecord.tsx
+ ├── screens/
+ │    ├── HomeScreen.tsx
+ │    └── CounterScreen.tsx
+ ├── storage/
+ │    └── sessionRepository.ts
+ ├── types/
+ │    └── session.ts
+ └── navigation/
+      └── StackNavigator.tsx
 
-Then, and every time you update your native dependencies, run:
+📦 Data Structure (Session Record)
+- Each fetal movement session is stored locally with the following structure:
+  ```bash
+  {
+  id: string,                // UUID
+  date: string,              // e.g. "Monday, 06 Jan 2026"
+  durationSeconds: number,   // Session duration in seconds
+  createdAt: number          // Timestamp
+}
 
-```sh
-bundle exec pod install
-```
+📌 Assumptions
+- App is designed only for Android
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- All data is stored locally (no backend)
 
-```sh
-# Using npm
-npm run ios
+- One session = one fetal movement recording
 
-# OR using Yarn
-yarn ios
-```
+- User manually controls start/stop
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+- App is intended for MVP / assignment evaluation
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- UI behavior remains consistent across all Android devices
 
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
