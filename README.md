@@ -15,22 +15,45 @@ A React Native **Android** mobile application to help pregnant women track daily
 
 ---
 
-## 🛠 Tech Stack
+## 📚 Libraries & Technologies Used
+# Core Framework
 
-- **React Native (CLI)** – Core framework  
-- **TypeScript** – Type safety and better code quality  
-- **React Navigation** – Screen navigation  
-- **AsyncStorage** – Local data persistence  
-- **UUID** – Unique session ID generation  
-- **react-native-vector-icons** – Icons  
+react-native – Core framework for building native Android apps using JavaScript and React
 
----
+ # Navigation
+
+- @react-navigation/native – Navigation container and routing
+
+- @react-navigation/native-stack – Native stack-based navigation
+
+- react-native-screens – Improves performance by using native navigation primitives
+
+- react-native-safe-area-context – Handles safe area insets for different devices
+
+#  UI & UX
+
+- react-native-vector-icons – Icon library (Ionicons, MaterialIcons)
+
+- @react-native-community/blur – Blur effects for modals and overlays
+
+- react-native-linear-gradient – Gradient backgrounds and overlays
+
+
+- react-native-gesture-handler – Gesture handling for navigation and interactions
+
+#  Storage & Data Handling
+
+- @react-native-async-storage/async-storage – Local persistent storage
+
+- react-native-uuid – Unique ID generation for sessions
+
+
 
 ## ▶️ How to Run the Project (Android Only)
 
 ### Prerequisites
 - Node.js 
-- npm or yarn
+- npm 
 - Android Studio (Android SDK + Emulator) or a physical Android device
 - Properly configured React Native CLI environment
 
@@ -38,7 +61,7 @@ A React Native **Android** mobile application to help pregnant women track daily
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/Ankit-kumar28/Daily-Fetal-Movement-Tracker.git>
    cd <project-folder>
 2.Install dependencies
    ```bash
@@ -70,7 +93,7 @@ src/
  │    └── session.ts
  └── navigation/
       └── StackNavigator.tsx
-
+```
 📦 Data Structure (Session Record)
 - Each fetal movement session is stored locally with the following structure:
   ```bash
@@ -80,6 +103,7 @@ src/
   durationSeconds: number,   // Session duration in seconds
   createdAt: number          // Timestamp
 }
+
 
 📌 Assumptions
 - App is designed only for Android
